@@ -6,6 +6,8 @@
       args:
         removes: /tmp/benchmarker
     - shell: rsync -aL --delete /tmp/isucon4/qualifier/benchmarker /tmp/
+    - shell: yes no | cp -ai /tmp/benchmarker/Makefile{,.default}
+    - shell: sed -e 's/-ldflags "${LD_FLAGS}"//g' /tmp/benchmarker/Makefile.default > /tmp/benchmarker/Makefile
     - command: chown -R isucon:isucon /tmp/benchmarker
     - lineinfile: dest=/tmp/benchmarker/Makefile state=present regexp='^GIT_COMMIT=.*' line='GIT_COMMIT=""'
     - lineinfile: dest=/tmp/benchmarker/main.go state=present regexp='checkInstanceMetadata\(\)' line=''
