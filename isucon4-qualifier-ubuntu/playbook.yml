@@ -3,5 +3,5 @@
 - include: 02_supervisord.yml
 - include: 03_xbuild.yml
 - include: 04_golang.yml
-- include: 05_benchmarker.yml
+#- include: 05_benchmarker.yml
 - include: _cleanup.yml
