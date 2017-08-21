@@ -75,7 +75,7 @@
         set -e
         source ./env.sh
         cd webapp/go/
-        go get gopkg.in/go-sql-driver/mysql.v1.2
+        go get github.com/go-sql-driver/mysql
         go get github.com/gorilla/mux
         go get github.com/gorilla/sessions
         go get github.com/bradfitz/gomemcache/memcache
